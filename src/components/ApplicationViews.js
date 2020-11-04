@@ -9,5 +9,11 @@ export const ApplicationViews = () => {
         }}>
             Application views
         </main>
+
+        <GameProvider>
+            <Route exact path="/">
+                <GameList />
+            </Route>
+        </GameProvider>
     </>
 }

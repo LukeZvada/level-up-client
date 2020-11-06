@@ -77,15 +77,19 @@ export const GameForm = props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="title">Title: </label>
-                    <input type="text" name="title" required autoFocus className="form-control"
-                        value={currentGame.title}
-                        onChange={handleControlledInputChange}
-                    />
+                    <label htmlFor="gameTypeId">Game Type: </label>
+                    <select type="text" name="gameTypeId" required className="form-control"
+                        value={currentGame.gameTypeId}
+                        onChange={handleControlledInputChange}>
+                        <option value="0">Select game type</option>
+                        {
+                            gameTypes.map(type =>{
+                            return <option key={type.id} value={type.id}>{type.label}</option>
+                            })
+                        }
+                    </select>
                 </div>
             </fieldset>
-
-            {/* You create the rest of the input fields for each game property */}
 
             <button type="submit"
                 onClick={evt => {
